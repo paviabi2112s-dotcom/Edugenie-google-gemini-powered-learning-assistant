@@ -1,1 +1,74 @@
+Ungaloda GitHub repo-la irukura **[requirment analysis phase](https://github.com/paviabi2112s-dotcom/Edugenie-google-gemini-powered-learning-assistant/tree/main?utm_source=gemini)** file-ukku podhumana content idho.
 
+Idha copy panni unga file-la edit panni paste pannikonga:
+
+---
+
+# Edugenie: Google Gemini-Powered Learning Assistant
+
+## Requirement Analysis Phase
+
+---
+
+### 1. Executive Summary & Purpose
+
+The **Requirement Analysis Phase** defines the technical, functional, and non-functional requirements for **Edugenie**, an intelligent, AI-powered learning assistant. This document serves as the foundation for design and development, ensuring that user needs, system capabilities, and Google Gemini API integration points are clearly established.
+
+---
+
+### 2. Stakeholder & Target User Profiles
+
+* **Primary Users:** High school and university students needing study support, quick revision, and active recall tools.
+* **Secondary Users:** Educators and self-learners looking to auto-generate quizzes, flashcards, and summary materials from raw documents.
+* **Key User Goal:** Reduce manual note processing time and get instant, interactive study materials powered by AI.
+
+---
+
+### 3. Functional Requirements (FR)
+
+#### FR-1: User Input & Document Processing
+
+* **FR-1.1:** System MUST accept multi-format inputs including raw text, Markdown, and PDF documents.
+* **FR-1.2:** System MUST extract readable text cleanly before passing context to the Gemini API.
+
+#### FR-2: Smart Summarization & Key Insights
+
+* **FR-2.1:** System MUST generate concise summaries (bullet points, key concepts, 1-minute key takeaways) using `gemini-1.5-flash`.
+* **FR-2.2:** System MUST highlight key formulas, dates, and domain-specific terminology.
+
+#### FR-3: Dynamic Quiz & Flashcard Generation
+
+* **FR-3.1:** System MUST generate multiple-choice questions (MCQs) and interactive flip-flashcards from uploaded study context.
+* **FR-3.2:** System MUST enforce Gemini's **Structured Output (`responseSchema`)** to return well-formed JSON for UI components.
+
+#### FR-4: Interactive Socratic AI Tutor Chat
+
+* **FR-4.1:** System MUST provide a multi-turn chat interface using Gemini conversation context.
+* **FR-4.2:** System MUST instruct Gemini via system prompts to use Socratic guiding questions and step-by-step analogies.
+
+---
+
+### 4. Non-Functional Requirements (NFR)
+
+| Category | Requirement Specification |
+| --- | --- |
+| **Performance & Latency** | AI summary and flashcard generation MUST complete within 3 seconds using `gemini-1.5-flash`. |
+| **Security & Privacy** | API Key MUST be strictly secured on the backend environment (`.env`) and never exposed on the client side. |
+| **Usability & UI/UX** | Mobile-responsive web UI, clear loading spinners during API calls, and clean Markdown rendering for AI responses. |
+| **Reliability** | Elegant handling for edge cases such as empty input, rate limits, or API connectivity errors. |
+
+---
+
+### 5. Hardware & Software Requirements
+
+* **Development Environment:** Node.js v18+ / Python 3.10+, VS Code, Git.
+* **AI Engine & SDK:** Google Gemini API (`@google/genai` SDK), Google AI Studio API Key.
+* **Deployment Target:** Vercel / Netlify (Frontend), Render / Railway (Backend).
+
+---
+
+### File Update Steps:
+
+1. Unga screen-la top-right corner-la irukura **Pencil Icon (Edit file)**-a click pannunga.
+2. Mela irukura content-a copy panni paste pannunga.
+3. Keela **"Commit changes..."** button-a click panni save pannikonga.
