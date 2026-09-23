@@ -1,1 +1,104 @@
+Ungaloda GitHub repo-la irukura **[project development phase](https://github.com/paviabi2112s-dotcom/Edugenie-google-gemini-powered-learning-assistant/blob/main/project%20development%20phase?utm_source=gemini#start-of-content/blob/main/project%20development%20phase)** file-ukku podhumana content idho.
 
+Idha copy panni unga file-la edit panni paste pannikonga:
+
+---
+
+# Edugenie: Google Gemini-Powered Learning Assistant
+
+## Project Development Phase
+
+---
+
+### 1. Overview & Objectives
+
+The **Project Development Phase** covers the actual implementation, coding, and integration of core features for **Edugenie**. This phase focuses on setting up the repository environment, developing backend service routes, integrating the Google Gemini API, and connecting the user interface.
+
+---
+
+### 2. Environment Setup & Project Structure
+
+#### Tech Stack Configured
+
+* **Frontend:** React / Next.js with Tailwind CSS
+* **Backend:** Node.js (Express) / Python (FastAPI)
+* **SDK:** `@google/genai` (Google Gemini SDK)
+
+#### Recommended Folder Structure
+
+```text
+Edugenie/
+├── backend/
+│   ├── config/          # Gemini API Key & Env setup
+│   ├── controllers/     # Route handler logic (Summarizer, Quiz, Chat)
+│   ├── prompts/         # System prompts and templates for Gemini
+│   ├── routes/          # API route definitions
+│   ├── .env             # GEMINI_API_KEY
+│   └── server.js        # Main entry point
+├── frontend/
+│   ├── src/
+│   │   ├── components/  # UI Components (Quiz, Flashcard, Chat Window)
+│   │   ├── pages/       # Dashboard, Study Space
+│   │   └── services/    # API integration calls
+│   └── package.json
+└── README.md
+
+```
+
+---
+
+### 3. Core Development Modules
+
+#### Module 1: Gemini API Initialization & Prompt Config
+
+Setting up the SDK and establishing core prompt templates to force structured responses.
+
+```javascript
+// Example Node.js Initialization
+import { GoogleGenAI } from '@google/genai';
+
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+
+export async function generateStudyNotes(promptText) {
+  const response = await ai.models.generateContent({
+    model: 'gemini-1.5-flash',
+    contents: promptText,
+    config: {
+      systemInstruction: "You are Edugenie, an expert AI tutor. Summarize key educational points clearly.",
+    }
+  });
+  return response.text;
+}
+
+```
+
+#### Module 2: AI Summary & Key Takeaways Generator
+
+* Implemented endpoints to accept user notes/text input.
+* Processed raw text using `gemini-1.5-flash` for high-speed content extraction.
+
+#### Module 3: Dynamic Quiz & Flashcard Generation
+
+* Configured Gemini API using `responseSchema` (Structured Output) to receive JSON directly.
+* Enabled instant rendering of multiple-choice questions (MCQs) and interactive flip-cards in the frontend.
+
+#### Module 4: Gemini Socratic Tutor Chat Interface
+
+* Developed real-time streaming/chat route using Gemini conversation history.
+* Set system instructions to guide users step-by-step using analogies and Socratic questioning.
+
+---
+
+### 4. Code Commit & Version Control Workflow
+
+1. **Repository Setup:** Git initialized and main branches (`main`, `dev`) structured.
+2. **Environment Protection:** `.env` added to `.gitignore` to prevent API key exposure.
+3. **Feature Branching:** Modular feature implementation (`feature/notes-summary`, `feature/quiz-generator`, `feature/ai-chat`).
+
+---
+
+### File Update Steps:
+
+1. Unga screen-la top-right corner-la irukura **Pencil Icon (Edit file)**-a click pannunga.
+2. Mela irukura content-a copy panni paste pannunga.
+3. Keela **"Commit changes..."** button-a click panni save pannikonga.
